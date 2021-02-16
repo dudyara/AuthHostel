@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "История операций";
+}
+
+<div>
+    <center>
+        <h1>История денежных операций</h1>
+    </center>
+    <table class="container table table-sm col-8 table-bordered">
+        <tr>
+            <td><p>ФИО Клиента</p></td>
+            <td><p>Дата</p></td>
+            <td><p>Сумма</p></td>
+            <td><p>Форма оплаты</p></td>
+        </tr>
+        @foreach (AuthHostel.Models.MoneyHistory b in Model)
+        {
+            <tr>
+                <td><p>@b.FIO</p></td>
+                <td><p>@b.Date</p></td>
+                <td><p>@b.Value</p></td>
+                <td><p>@b.PayType</p></td>
+            </tr>
+        }
+    </table>
+</div>

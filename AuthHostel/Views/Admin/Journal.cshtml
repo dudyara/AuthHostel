@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Журнал ухода";
+}
+
+<div>
+    <center>
+        <h1>Журнал ухода</h1>
+    </center>
+    <table class="container table table-sm col-8 table-bordered">
+        <tr>
+            <td><p>Кличка животного</p></td>
+            <td><p>ФИО хозяина</p></td>
+            <td><p>ФИО сотрудника</p></td>
+            <td><p>Тип ухода </p></td>
+            <td><p>Время</p></td>
+        </tr>
+        @foreach (AuthHostel.Models.Journal b in Model)
+        {
+
+        <tr>
+
+
+
+            <td><p>@b.AnimalName</p></td>
+            <td><p>@b.OwnerFIO</p></td>
+            <td><p>@b.EmployFIO</p></td>
+            <td><p>@b.CareType</p></td>
+            <td><p>@b.Time</p></td>
+            <td>
+                <a href="EditJournal/@b.CareID">
+                    <span class="oi oi-pencil" style="color: #2a6496">
+                        &#160
+                    </span>
+                </a>
+                <a href="CreateJournal">
+                    <span class="oi oi-plus" style="color: #2a6496"> &#160 </span>
+                </a>
+                <a href="DeleteJournal/@b.CareID">
+                    <span class="oi oi-x" style="color: #2a6496"></span>
+                </a>
+            </td>
+
+        </tr>
+
+         }
+    </table>
+</div>

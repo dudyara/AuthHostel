@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "История посещений";
+}
+
+<div>
+    <center>
+        <h1>История посещений</h1>
+    </center>
+    <table class="container table table-sm col-8 table-bordered">
+        <tr>
+            <td><p>ФИО клиента</p></td>
+            <td><p>Кличка животного</p></td>
+            <td><p>Дата приезда</p></td>
+            <td><p>Дата отъезда </p></td>
+            <td><p>Номер</p></td>
+        </tr>
+        @foreach (AuthHostel.Models.Universal b in Model)
+        {
+            <tr>
+                <td><p>@b.A</p></td>
+                <td><p>@b.B</p></td>
+                <td><p>@b.C</p></td>
+                <td><p>@b.D</p></td>
+                <td><p>@b.E</p></td>
+            </tr>
+        }
+    </table>
+</div>

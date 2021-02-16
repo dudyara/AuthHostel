@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cycle.all.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slideshow').cycle({
+                fx: 'cover'
+            });
+        });
+    </script>
+    <meta charset="utf-8" />
+    <title>Сайт гостиницы</title>
+    <style>
+        .slideshow {
+            position: absolute;
+            width: 750px;
+            height: 450px;
+            left: calc(50% - 750px/2);
+            top: 200px;
+        }
+
+        .lable1 {
+            position: absolute;
+            width: 541px;
+            height: 83px;
+            left: calc(50% - 541px/2 - 0.5px);
+            top: 100px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lable1">
+        Добро пожаловать в гостиницу домашних животных!
+    </div>
+
+    <div align="center" class="slideshow">
+        <img src="https://espanarusa.com/files/autoupload/98/21/2/gdkzlmk4443605.jpg" alt="" width="750" height="450" />
+        <img src="https://severdv.ru/wp-content/uploads/2020/07/sobaka-na-divane.jpg" alt="" width="750" height="450" />
+        <img src="https://s.zefirka.net/images/2018-09-19/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii-8.jpg" alt="" width="750" height="450" />
+        <img src="https://yandex-images.naydex.net/5l4Hxw115/72fe52G8F/dspKHAQSDK7O705XuvfKJxrYXcjZnvhXWTCVSOa9t96VYHHHXxqtDJmtsY6CA0Tr2dLe58QjwPBQnu3NOthKESPLR3xwZgWnqqYu4qPD9joGqViZqM-xZwRpwFnT9aebrQ0smp9GnQWU_C2arh84V3Fepzs0lwUdqWMRoS-sX0FHsk8hxdMIxpbf6lf_197_T6xdVPVeVK7poDU5ysULE72E4WMrIoXlFKDIv9sKfC-JhuPz3OPtnVX_TQWfSJtNLs5X0XmmhC4ii15HM_tKo4-kkZSxTkhSTYAZ0dJpmyNxkO1Xn-rNzbiMNE_3jpBPBX53dyBn7V11ByF9m1B7gT42E-WNkoy6kpNS-9tLKuPLgPHUaV6wclFUic06JavDqezVU8sq9dkwVGj_T-agfzH-G5-M8-mFmfNBIc_Mhwk2EovJNbaYKi5zGv_HK7Lf20g17KnG-OLdSNXBQv0bB20kvffLwiFVqIiYf2PaWJ8l-u-_7BuN7aGTMQWLSOdhcl4vHR3-qFqGd9bHs4PSK__84ZTlwvT2VSg5zf4560s5tF27LxodrRCgZG8nPjijqfZ_D3B_JQ2JUx3RB9grya4CD121siSeei_-m-tvng_7IFFwrdIoHqGcYd3S7cvnqQz5mz82CV0s3IQDM5Y8M90SJ6dY541x_U8JEZvQZ4m-ViOhXZrAupI7fk8Tr8KTd9h9dN3uyAp5pLE1dknvLylsWU8PEs1BMADgy2NaXJOxMocb8CedjXnXYVEPGEdZFuqb3S0iwEYSt6KLX9ee5-_YpRAB6mh6ARDhKRr1q9vFaKVr80IpzXz4XO-rtqD3gR6fd1wjDWkpF_UtnwQvhXISF52pZmCm-g8iC7PrloOb2AV4Qcr04ukEYTUehUOLAbwxq5eaNTVoSIjTc4KQJyWWH4eE842JeZs19Te8y90qEqPxaY4wZloPxt9bF0oX7wCllFXGOCpFrBWl3vmM" alt="" width="750" height="450" />
+    </div>
+
+    </body>
+</html>

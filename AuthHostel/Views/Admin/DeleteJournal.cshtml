@@ -1,0 +1,33 @@
+﻿
+@model AuthHostel.Models.CareJournal
+<h2>Удаление </h2>
+<dl>
+    <dt>ID</dt>
+    <dd>
+        @Html.DisplayFor(model => model.ID)
+    </dd>
+
+    <dt>Время</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Time)
+    </dd>
+
+    <dt>Работник</dt>
+    <dd>
+        @Html.DisplayFor(model => model.EmployID)
+    </dd>
+    <dt>Тип ухода</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Time)
+    </dd>
+
+    <dt>Животное</dt>
+    <dd>
+        @Html.DisplayFor(model => model.AnimalID)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}

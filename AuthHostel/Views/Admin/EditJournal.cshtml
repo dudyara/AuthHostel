@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Редактировать журнал";
+}
+@model AuthHostel.Models.CareJournal
+<h2>Редактировать</h2>
+@using (Html.BeginForm("EditJournal", "Admin", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(m => m.ID)
+    <br /> <br />
+    @Html.LabelFor(m => m.Time, "Время")
+    <br />
+    @Html.EditorFor(m => m.Time)
+    <br /><br />
+    @Html.LabelFor(model => model.EmployID, "Работник")
+    <br />
+    @Html.DropDownListFor(model => model.EmployID, ViewBag.Employs as SelectList)
+    <br /><br />
+    @Html.LabelFor(model => model.CareID, "Тип ухода")
+    <br />
+    @Html.DropDownListFor(model => model.CareID, ViewBag.Cares as SelectList)
+    <br /><br />
+    @Html.LabelFor(model => model.AnimalID, "Животное")
+    <br />
+    @Html.DropDownListFor(model => model.AnimalID, ViewBag.Animals as SelectList)
+    <br /> <br />
+    <p><input type="submit" value="Отправить" /></p>
+</fieldset>
+}

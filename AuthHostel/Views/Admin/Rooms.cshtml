@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Номера";
+}
+
+
+<div class="container body-content">
+    <center>
+        <h1>
+            Номера
+        </h1>
+    </center>
+    <table class="container table table-sm col-8 table-bordered">
+        <tr>
+            <th>Номер</th>
+            <th>Кличка животного</th>
+            <th>Вид</th>
+            <th>Порода</th>
+            <th>ФИО хозяина</th>
+            <th>Стоимость проживания</th>
+            <th>Дата заселения</th>
+            <th>Дата выселения</th>
+        </tr>
+
+        @foreach (AuthHostel.Models.ActualRoom b in Model)
+        {
+            <tr>
+                <td><p>@b.RoomName</p></td>
+                <td><p>@b.AnimalName</p></td>
+                <td><p>@b.Species</p></td>
+                <td><p>@b.Breed</p></td>
+                <td><p>@b.OwnerFIO</p></td>
+                <td><p>@b.Value</p></td>
+                <td><p>@b.ArrivalDate</p></td>
+                <td><p>@b.DepartureDate</p></td>
+
+                <td>
+                    <span class="oi oi-pencil" style="color: #2a6496">
+                        &#160
+                    </span>
+                    <span class="oi oi-plus" style="color: #2a6496"> &#160 </span>
+                    <span class="oi oi-x" style="color: #2a6496"></span>
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+
+</div>
+
