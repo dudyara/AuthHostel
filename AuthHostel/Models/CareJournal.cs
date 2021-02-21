@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AuthHostel.Models
 {
-    public class CareJournal
+    public class CareJournal //таблица, содержащая идентификаторы параметров события ухода
     {
         [Key]
         public int ID { get; set; }

@@ -23,30 +23,37 @@
 
         @foreach (AuthHostel.Models.ActualRoom b in Model)
         {
-            <tr>
-                <td><p>@b.RoomName</p></td>
-                <td><p>@b.AnimalName</p></td>
-                <td><p>@b.Species</p></td>
-                <td><p>@b.Breed</p></td>
-                <td><p>@b.OwnerFIO</p></td>
-                <td><p>@b.Value</p></td>
-                <td><p>@b.ArrivalDate</p></td>
-                <td><p>@b.DepartureDate</p></td>
-
-                <td>
-                    <span class="oi oi-pencil" style="color: #2a6496">
-                        &#160
-                    </span>
-                    <span class="oi oi-plus" style="color: #2a6496"> &#160 </span>
+        <tr>
+            <td><p>@b.RoomName</p></td>
+            <td><p>@b.AnimalName</p></td>
+            <td><p>@b.Species</p></td>
+            <td><p>@b.Breed</p></td>
+            <td><p>@b.OwnerFIO</p></td>
+            <td><p>@b.Value</p></td>
+            <td><p>@b.ArrivalDate</p></td>
+            <td><p>@b.DepartureDate</p></td>
+            @if (b.AnimalName != null)
+            {
+            <td>
+                <a href="EditAnimalInRoom/@b.AnimalInRoomsID">
+                    <span class="oi oi-pencil" style="color: #2a6496">  &#160 </span>
+                </a>
+                <a href="DeleteRoom/@b.AnimalInRoomsID">
                     <span class="oi oi-x" style="color: #2a6496"></span>
-                </td>
+                </a>
+            </td>
+            }
 
-
-            </tr>
+        </tr>
         }
 
     </table>
-
+    <center>
+        <a href="~/Admin/CreateAnimalInRoom">
+            <div class="bron2"></div>
+            <div class=" textbron2"><br />Забронировать!</div>
+        </a>
+    </center>
 
 </div>
 

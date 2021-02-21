@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AuthHostel.Models
 {
-    public class MoneyHistory
+    public class MoneyHistory // таблица - представление с историей операций
     {
         [Key]
         public string FIO { get; set; }

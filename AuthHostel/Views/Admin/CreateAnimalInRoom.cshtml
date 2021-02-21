@@ -1,0 +1,42 @@
+﻿@model AuthHostel.Models.RoomAdd
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Заселить животное</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.RoomID, "Комната")
+    <br />
+    @Html.DropDownListFor(model => model.RoomID, ViewBag.Rooms as SelectList)
+    <br /><br />
+    @Html.LabelFor(model => model.ClientName, "ФИО клиента")
+    <br />
+    @Html.EditorFor(model => model.ClientName)
+    <br /><br />
+    @Html.LabelFor(model => model.AnimalName, "Кличка животного")
+    <br />
+    @Html.EditorFor(model => model.AnimalName)
+    <br /><br />
+    @Html.LabelFor(model => model.AnimalSpecies, "Вид")
+    <br />
+    @Html.EditorFor(model => model.AnimalSpecies)
+    <br /><br />
+    @Html.LabelFor(model => model.AnimalType, "Порода")
+    <br />
+    @Html.EditorFor(model => model.AnimalType)
+    <br /><br />
+    @Html.LabelFor(model => model.ArrivalDate, "Дата прибытия")
+    <br />
+    @Html.EditorFor(model => model.ArrivalDate)
+    <br /><br />
+    @Html.LabelFor(model => model.DepartureDate, "Дата отъезда")
+    <br />
+    @Html.EditorFor(model => model.DepartureDate)
+    <br /><br />
+
+
+    <input type="submit" value="Добавить" />
+}

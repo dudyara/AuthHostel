@@ -1,30 +1,131 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Гостиница";
 }
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="@Url.Content("~/Scripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/jquery.cycle.all.min.js")" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slideshow').cycle({
-                fx: 'cover'
-            });
-        });
-    </script>
     <meta charset="utf-8" />
     <title>Сайт гостиницы</title>
     <style>
-        .slideshow {
+        #slides {
             position: absolute;
             width: 750px;
             height: 450px;
             left: calc(50% - 750px/2);
             top: 200px;
         }
+        hr {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border: 0;
+            border-top: 0px solid #ffffff;
+        }
+        .slide {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            -webkit-transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+        }
 
+        .showing {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        ::marker {
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .like {
+            position: absolute;
+            width: 626px;
+            height: 92px;
+            left: calc(50% - 626px/2);
+            top: 1394px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .textbron {
+            position: absolute;
+            width: 310px;
+            height: 31px;
+            left: calc(50% - 308px/2);
+            top: 1529px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #000000;
+        }
+        .bron {
+            position: absolute;
+            width: 308px;
+            height: 81px;
+            left: calc(50% - 308px/2);
+            top: 1504px;
+            background: #E2D6D6;
+        }
+
+        *:before, *:after {
+            color: white;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .vana {
+            position: absolute;
+            width: 363px;
+            height: 411px;
+            left: calc(50% - 363px/2 - 439.5px);
+            top: 780px;
+            background: #C4C4C4;
+        }
+        .artur {
+            position: absolute;
+            width: 363px;
+            height: 411px;
+            left: calc(50% - 363px/2 - 0.5px);
+            top: 780px;
+            background: #C4C4C4;
+        }
+        .lexa {
+            position: absolute;
+            width: 363px;
+            height: 411px;
+            left: calc(50% - 363px/2 + 438.5px);
+            top: 780px;
+            background: #C4C4C4;
+        }
+        .lable2 {
+            position: absolute;
+            width: 444px;
+            height: 61px;
+            left: calc(50% - 444px/2);
+            top: 700px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #000000;
+        }
         .lable1 {
             position: absolute;
             width: 541px;
@@ -48,12 +149,123 @@
         Добро пожаловать в гостиницу домашних животных!
     </div>
 
-    <div align="center" class="slideshow">
-        <img src="https://espanarusa.com/files/autoupload/98/21/2/gdkzlmk4443605.jpg" alt="" width="750" height="450" />
-        <img src="https://severdv.ru/wp-content/uploads/2020/07/sobaka-na-divane.jpg" alt="" width="750" height="450" />
-        <img src="https://s.zefirka.net/images/2018-09-19/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii-8.jpg" alt="" width="750" height="450" />
-        <img src="https://yandex-images.naydex.net/5l4Hxw115/72fe52G8F/dspKHAQSDK7O705XuvfKJxrYXcjZnvhXWTCVSOa9t96VYHHHXxqtDJmtsY6CA0Tr2dLe58QjwPBQnu3NOthKESPLR3xwZgWnqqYu4qPD9joGqViZqM-xZwRpwFnT9aebrQ0smp9GnQWU_C2arh84V3Fepzs0lwUdqWMRoS-sX0FHsk8hxdMIxpbf6lf_197_T6xdVPVeVK7poDU5ysULE72E4WMrIoXlFKDIv9sKfC-JhuPz3OPtnVX_TQWfSJtNLs5X0XmmhC4ii15HM_tKo4-kkZSxTkhSTYAZ0dJpmyNxkO1Xn-rNzbiMNE_3jpBPBX53dyBn7V11ByF9m1B7gT42E-WNkoy6kpNS-9tLKuPLgPHUaV6wclFUic06JavDqezVU8sq9dkwVGj_T-agfzH-G5-M8-mFmfNBIc_Mhwk2EovJNbaYKi5zGv_HK7Lf20g17KnG-OLdSNXBQv0bB20kvffLwiFVqIiYf2PaWJ8l-u-_7BuN7aGTMQWLSOdhcl4vHR3-qFqGd9bHs4PSK__84ZTlwvT2VSg5zf4560s5tF27LxodrRCgZG8nPjijqfZ_D3B_JQ2JUx3RB9grya4CD121siSeei_-m-tvng_7IFFwrdIoHqGcYd3S7cvnqQz5mz82CV0s3IQDM5Y8M90SJ6dY541x_U8JEZvQZ4m-ViOhXZrAupI7fk8Tr8KTd9h9dN3uyAp5pLE1dknvLylsWU8PEs1BMADgy2NaXJOxMocb8CedjXnXYVEPGEdZFuqb3S0iwEYSt6KLX9ee5-_YpRAB6mh6ARDhKRr1q9vFaKVr80IpzXz4XO-rtqD3gR6fd1wjDWkpF_UtnwQvhXISF52pZmCm-g8iC7PrloOb2AV4Qcr04ukEYTUehUOLAbwxq5eaNTVoSIjTc4KQJyWWH4eE842JeZs19Te8y90qEqPxaY4wZloPxt9bF0oX7wCllFXGOCpFrBWl3vmM" alt="" width="750" height="450" />
+    <ul id="slides">
+        <li class="slide showing"><img src="https://espanarusa.com/files/autoupload/98/21/2/gdkzlmk4443605.jpg" alt="" width="750" height="450" /></li>
+        <li class="slide">
+            <img src="https://severdv.ru/wp-content/uploads/2020/07/sobaka-na-divane.jpg" alt="" width="750" height="450" />
+        </li>
+        <li class="slide">
+            <img src="https://s.zefirka.net/images/2018-09-19/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii/roskoshnyj-pyatizvezdochnyj-otel-dlya-sobak-v-velikobritanii-8.jpg" alt="" width="750" height="450" />
+        </li>
+        <li class="slide">
+            <img src="https://yandex-images.naydex.net/5l4Hxw115/72fe52G8F/dspKHAQSDK7O705XuvfKJxrYXcjZnvhXWTCVSOa9t96VYHHHXxqtDJmtsY6CA0Tr2dLe58QjwPBQnu3NOthKESPLR3xwZgWnqqYu4qPD9joGqViZqM-xZwRpwFnT9aebrQ0smp9GnQWU_C2arh84V3Fepzs0lwUdqWMRoS-sX0FHsk8hxdMIxpbf6lf_197_T6xdVPVeVK7poDU5ysULE72E4WMrIoXlFKDIv9sKfC-JhuPz3OPtnVX_TQWfSJtNLs5X0XmmhC4ii15HM_tKo4-kkZSxTkhSTYAZ0dJpmyNxkO1Xn-rNzbiMNE_3jpBPBX53dyBn7V11ByF9m1B7gT42E-WNkoy6kpNS-9tLKuPLgPHUaV6wclFUic06JavDqezVU8sq9dkwVGj_T-agfzH-G5-M8-mFmfNBIc_Mhwk2EovJNbaYKi5zGv_HK7Lf20g17KnG-OLdSNXBQv0bB20kvffLwiFVqIiYf2PaWJ8l-u-_7BuN7aGTMQWLSOdhcl4vHR3-qFqGd9bHs4PSK__84ZTlwvT2VSg5zf4560s5tF27LxodrRCgZG8nPjijqfZ_D3B_JQ2JUx3RB9grya4CD121siSeei_-m-tvng_7IFFwrdIoHqGcYd3S7cvnqQz5mz82CV0s3IQDM5Y8M90SJ6dY541x_U8JEZvQZ4m-ViOhXZrAupI7fk8Tr8KTd9h9dN3uyAp5pLE1dknvLylsWU8PEs1BMADgy2NaXJOxMocb8CedjXnXYVEPGEdZFuqb3S0iwEYSt6KLX9ee5-_YpRAB6mh6ARDhKRr1q9vFaKVr80IpzXz4XO-rtqD3gR6fd1wjDWkpF_UtnwQvhXISF52pZmCm-g8iC7PrloOb2AV4Qcr04ukEYTUehUOLAbwxq5eaNTVoSIjTc4KQJyWWH4eE842JeZs19Te8y90qEqPxaY4wZloPxt9bF0oX7wCllFXGOCpFrBWl3vmM" alt="" width="750" height="450" />
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('#slides .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide, 5000);
+
+        function nextSlide() {
+            slides[currentSlide].className = 'slide';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].className = 'slide showing';
+        }
+    </script>
+
+    <div class="lable2">
+        Наши работники - наша гордость!
     </div>
 
-    </body>
+    <div style="position: absolute;
+width: 1440px;
+height: 550px;
+left: calc(50% - 1440px/2);
+top: 780px;
+
+background: #C4C4C4;
+border-radius: 111px;">
+
+    </div>
+    <div style=" position: absolute;
+width: 363px;
+height: 115px;
+left: calc(50% - 363px/2 - 439.5px);
+top: 1200px;
+
+background: #FFFFFF;">
+
+    </div>
+    <div style=" position: absolute;
+width: 363px;
+height: 115px;
+left: calc(50% - 363px/2 - 0.5px);
+top: 1200px;
+
+background: #FFFFFF;">
+
+    </div>
+    <div style=" position: absolute;
+width: 363px;
+height: 115px;
+left: calc(50% - 363px/2 + 438.5px);
+top: 1200px;
+
+background: #FFFFFF;">
+
+    </div>
+    <div style="position: absolute;width: 366px;height: 116px;left: calc(50% - 366px/2 - 441px);top: 1200px;font-family: Roboto;
+font-style: normal;font-weight: normal;font-size: 24px;line-height: 28px;text-align: center;color: #000000;">
+        Чепкасов Иван <br /><br />
+        Специалист по работе с жирафами
+    </div>
+
+    <div style="position: absolute;
+width: 366px;
+height: 116px;
+left: calc(50% - 366px/2 - 0.5px);
+top: 1200px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+
+color: #000000;">
+        Ачоян Артур <br /><br />
+        Специалист по расчету корма
+    </div>
+
+    <div style="position: absolute;width: 366px;height: 116px;left: calc(50% - 366px/2 + 440px);
+top: 1200px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 24px;line-height: 28px;text-align: center;color: #000000;">
+        Капустин Алексей <br /><br />
+        Специалист по Большим Дикобразам
+    </div>
+
+    <div class=" like">
+        Понравилась гостиница?<br />
+        Чего же вы ждете?!<br />
+        Скорее бронируйте номер!
+    </div>
+    <a href="~/Admin/CreateAnimalInRoom">
+        <div class="bron"></div>
+        <div class=" textbron">Забронировать!</div>
+    </a>
+    <div class=" artur">
+        <img src="https://sun9-12.userapi.com/impg/OSo-vMJMuO7TkPjg7DnneL9psDSpFTPGQ6DZcg/68obHXRVD4I.jpg?size=413x531&quality=96&proxy=1&sign=33a696941db599596c675b1fa3f66991&type=album" width="363" height="411" />
+    </div>
+    <div class=" vana">
+        <img src="https://asb.infobasket.ru/Widget/GetPersonPhoto/57365?d=1&compId=43560" width="363" height="411" />
+    </div>
+    <!--<div class=" lexa">
+        <img src="https://toipkro.ru/content/pages/361/5849132d66c33.jpg" width="363" height="411" />
+    </div>истинное лицо капустина-->
+    <div class=" lexa">
+        <img src="https://premierliga.ru/netcat_files/20/15/Dzyuba-Artyom-53787.jpg" width="363" height="411" />
+    </div>
+    <div style="position: absolute;width: 470px;height: 91px;left: 480px;top: 1607px;background: #FFFFFF;"></div>
+</body>
 </html>

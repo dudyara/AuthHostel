@@ -11,7 +11,35 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style>
+        hr {
+            border-top: 0px solid #ffffff;
+        }
 
+        .textbron2 {
+            position: absolute;
+            width: 310px;
+            height: 31px;
+            left: calc(50% - 310px/2 - 1px);
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .bron2 {
+            position: absolute;
+            width: 308px;
+            height: 81px;
+            left: calc(50% - 308px/2);
+
+            background: #E2D6D6;
+        }
+    </style>
 
 </head>
 <body>
@@ -27,17 +55,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                   <!-- @if (User.Identity.IsAuthenticated)
+                    @if ((User.Identity.IsAuthenticated) && (User.Identity.Name != "admin@mail.ru"))
                     {
+                        <li>@Html.ActionLink("Забронировано", "FutureRooms", "Admin")</li>
+                    }
+                    @if (User.Identity.Name == "admin@mail.ru")
+                    {
+                        <li>@Html.ActionLink("Номера", "Rooms", "Admin")</li>
+                        <li>@Html.ActionLink("Забронировано", "FutureRooms", "Admin")</li>
                         <li>@Html.ActionLink("Журнал ухода", "Journal", "Admin")</li>
                         <li>@Html.ActionLink("История денежных операций", "Money", "Admin")</li>
                         <li>@Html.ActionLink("История посещений", "History", "Admin")</li>
-                        <li>@Html.ActionLink("Номера", "Rooms", "Admin")</li>
-                    }-->
-                    <li>@Html.ActionLink("Журнал ухода", "Journal", "Admin")</li>
-                    <li>@Html.ActionLink("История денежных операций", "Money", "Admin")</li>
-                    <li>@Html.ActionLink("История посещений", "History", "Admin")</li>
-                    <li>@Html.ActionLink("Номера", "Rooms", "Admin")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

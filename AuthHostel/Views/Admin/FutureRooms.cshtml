@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Номера";
+}
+
+
+<div class="container body-content">
+    <center>
+        <h1>
+            Забронированные номера
+        </h1>
+    </center>
+    <table class="container table table-sm col-8 table-bordered">
+        @{ int k = 0;}
+        
+
+        @foreach (AuthHostel.Models.FutureRoom b in Model)
+        {
+            if ((b.Login == User.Identity.Name) || (User.Identity.Name == "admin@mail.ru"))
+            {
+                if (k == 0)
+                {
+                <tr>
+                    <th>Номер</th>
+                    <th>Кличка животного</th>
+                    <th>Вид</th>
+                    <th>Порода</th>
+                    <th>ФИО хозяина</th>
+                    <th>Стоимость проживания</th>
+                    <th>Дата заселения</th>
+                    <th>Дата выселения</th>
+                </tr>
+                    k++;
+                }
+                <tr>
+                    <td><p>@b.RoomName</p></td>
+                    <td><p>@b.AnimalName</p></td>
+                    <td><p>@b.Species</p></td>
+                    <td><p>@b.Breed</p></td>
+                    <td><p>@b.OwnerFIO</p></td>
+                    <td><p>@b.Value</p></td>
+                    <td><p>@b.ArrivalDate</p></td>
+                    <td><p>@b.DepartureDate</p></td>
+                    <td>
+                        <a href="EditAnimalInRoom/@b.AnimalInRoomsID">
+                            <span class="oi oi-pencil" style="color: #2a6496">  &#160 </span>
+                        </a>
+                        <a href="DeleteFutureRoom/@b.AnimalInRoomsID">
+                            <span class="oi oi-x" style="color: #2a6496"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+    <center>
+        <a href="~/Admin/CreateAnimalInRoom">
+            <div class="bron2"></div>
+            <div class=" textbron2"><br />Забронировать!</div>
+        </a>
+    </center>
+</div>
+

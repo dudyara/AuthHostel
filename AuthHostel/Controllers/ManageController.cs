@@ -6,9 +6,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using AuthHostel;
 using AuthHostel.Models;
 
-namespace AuthHostel.Controllers
+namespace Identity.Controllers
 {
     [Authorize]
     public class ManageController : Controller
@@ -32,9 +33,9 @@ namespace AuthHostel.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -333,7 +334,7 @@ namespace AuthHostel.Controllers
             base.Dispose(disposing);
         }
 
-#region Вспомогательные приложения
+        #region Вспомогательные приложения
         // Используется для защиты от XSRF-атак при добавлении внешних имен входа
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +385,6 @@ namespace AuthHostel.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }

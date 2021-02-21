@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AuthHostel.Models
 {
-    public class Journal
+    public class Journal //таблица-представление для журнала ухода
     {
         [Key]
         public int CareID { get; set; }

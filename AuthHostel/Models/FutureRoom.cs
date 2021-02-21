@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AuthHostel.Models
 {
-    public class ActualRoom //таблица-представление, содержащее только животных, которые сейчас в гостиницу
+    public class FutureRoom //таблица-представление, содержащее только забронрованные номера
     {
         [Key]
         public string RoomName { get; set; }
@@ -18,5 +18,6 @@ namespace AuthHostel.Models
         public int Value { get; set; }
         public string ArrivalDate { get; set; }
         public string DepartureDate { get; set; }
+        public string Login { get; set; }
     }
 }

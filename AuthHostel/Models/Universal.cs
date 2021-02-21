@@ -6,7 +6,7 @@ using System.Web;
 
 namespace AuthHostel.Models
 {
-    public class Universal
+    public class Universal // таблица-предтавление для истории посещения
     {
         [Key]
         public string A { get; set; }

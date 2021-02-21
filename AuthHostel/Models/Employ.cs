@@ -5,7 +5,7 @@ using System.Web;
 
 namespace AuthHostel.Models
 {
-    public class Employ
+    public class Employ //таблица работников
     {
         public int ID { get; set; }
         public string FIO { get; set; }
