@@ -265,7 +265,9 @@
     <Content Include="Views\Admin\EditAnimalInRoom.cshtml" />
     <Content Include="Views\Admin\FutureRooms.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

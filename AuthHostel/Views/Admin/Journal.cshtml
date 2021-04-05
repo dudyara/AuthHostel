@@ -17,31 +17,32 @@
         @foreach (AuthHostel.Models.Journal b in Model)
         {
 
-        <tr>
+            <tr>
+                <td><p>@b.AnimalName</p></td>
+                <td><p>@b.OwnerFIO</p></td>
+                <td><p>@b.EmployFIO</p></td>
+                <td><p>@b.CareType</p></td>
+                <td><p>@b.Time</p></td>
+                <td>
+                    <a href="EditJournal/@b.CareID">
+                        <span class="oi oi-pencil" style="color: #2a6496">
+                            &#160
+                        </span>
+                    </a>
 
+                    <a href="DeleteJournal/@b.CareID">
+                        <span class="oi oi-x" style="color: #2a6496"></span>
+                    </a>
+                </td>
 
+            </tr>
 
-            <td><p>@b.AnimalName</p></td>
-            <td><p>@b.OwnerFIO</p></td>
-            <td><p>@b.EmployFIO</p></td>
-            <td><p>@b.CareType</p></td>
-            <td><p>@b.Time</p></td>
-            <td>
-                <a href="EditJournal/@b.CareID">
-                    <span class="oi oi-pencil" style="color: #2a6496">
-                        &#160
-                    </span>
-                </a>
-                <a href="CreateJournal">
-                    <span class="oi oi-plus" style="color: #2a6496"> &#160 </span>
-                </a>
-                <a href="DeleteJournal/@b.CareID">
-                    <span class="oi oi-x" style="color: #2a6496"></span>
-                </a>
-            </td>
-
-        </tr>
-
-         }
+        }
     </table>
+    <center>
+        <a href="~/Admin/CreateJournal">
+            <div class="bron2"></div>
+            <div class=" textbron2"><br />Добавить запись</div>
+        </a>
+    </center>
 </div>

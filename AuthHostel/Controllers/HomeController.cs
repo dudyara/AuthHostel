@@ -110,10 +110,6 @@ namespace AuthHostel.Controllers
         [HttpGet]
         public ActionResult EditAnimalInRoom(int id)
         {
-            /*if (id == null)
-            {
-                return HttpNotFound();
-            }*/
             AnimalInRoom animalInRooms = db.AnimalInRooms.Find(id);
             Animal animal = db.Animals.Find(animalInRooms.AnimalID);
             Client client = db.Clients.Find(animal.ClientID);
